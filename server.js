@@ -5,8 +5,12 @@ import {z} from 'zod';
 import axios from 'axios';
 import {tools as browser_tools} from './browser_tools.js';
 import {createRequire} from 'node:module';
+import dotenv from 'dotenv';
+dotenv.config();
+
 const require = createRequire(import.meta.url);
 const package_json = require('./package.json');
+
 const api_token = process.env.API_TOKEN;
 const unlocker_zone = process.env.WEB_UNLOCKER_ZONE || 'mcp_unlocker';
 const browser_zone = process.env.BROWSER_ZONE || 'mcp_browser';
